@@ -1,0 +1,336 @@
+/* Overlay */
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 499;
+  visibility: hidden;
+  background: transparent;
+  transition: all 450ms ease;
+}
+
+.overlay.active {
+  visibility: visible;
+  background: rgba(0, 0, 0, .75);
+}
+
+/* All option button */
+
+.optionButton {
+  height: 45px;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding-right: 20px;
+  background-color: #e6e6e6;
+  float: left;
+  cursor: pointer;
+  transition: transform .25s ease-in-out, background-color 1s ease-out;
+  position: relative;
+  z-index: 498;
+}
+
+.optionButton.hoverEffect {
+  padding-right: 0;
+}
+
+.optionButton.active {
+  z-index: 500;
+}
+
+.optionButton:hover {
+  transform: translateY(-4px);
+  background-color: #d4d4d4;
+}
+
+.optionButton:last-child {
+  margin-right: 0;
+}
+
+/* The button */
+
+.optionButton > div {
+  display: flex;
+  flex-direction: row;
+  font: 600 14px 'Mukta';
+  letter-spacing: 0.2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.optionButton > div > span.badge {
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 15px;
+  line-height: 16px;
+  height: 15px;
+  margin-left: 10px;
+  background: #007aff;
+  color: #fff;
+}
+
+.optionButton > div > svg {
+  opacity: .54;
+  padding-right: 12px;
+  padding-left: 14px;
+  height: 45px;
+  margin-right: 12px;
+}
+
+.optionButton:not(.hoverEffect) > div > svg {
+  background: #d4d4d4;
+}
+
+.optionButton.hoverEffect > div > svg {
+  transition: background-color 500ms ease;
+}
+
+.optionButton.hoverEffect > div > svg:first-child {
+  margin-right: 5px; 
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.optionButton.hoverEffect > div > svg:last-child {
+  margin-left: 5px;
+  margin-right: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.optionButton.hoverEffect > div > svg:hover {
+  background-color: #bbb;
+}
+
+.optionButton > div > svg + svg {
+  padding-left: 10px;
+  padding-right: 14px;
+}
+
+.optionButton strong {
+  text-decoration: underline;
+}
+
+/* Dropdown */
+
+.optionButton > .dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #e6e6e6;
+  border-radius: 3px;
+  visibility: hidden;
+}
+
+.optionButton.active > .dropdown {
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionButton.active > .dropdown > span {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  position: absolute;
+  top: -40px;
+  left: calc(100% - 30px);
+  background: rgb(240, 21, 21);
+  border-radius: 3px;
+  transition: background-color 350ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionButton.active > .dropdown > span:hover {
+  background: rgb(223, 8, 8);
+}
+
+.optionButton.active > .dropdown > span > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.optionButton.active > .dropdown > footer {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #dedede;
+  box-sizing: border-box;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.optionButton.active > .dropdown > footer > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.optionButton.active > .dropdown > footer > ul > div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.optionButton.active > .dropdown > footer > ul > div > li {
+  text-align: left;
+  height: 30px;
+  padding: 0 4px;
+  line-height: 15px;
+  color: #777;
+}
+
+.optionButton.active > .dropdown > footer > span {
+  text-align: left;
+  color: #777;
+  display: flex;
+  align-items: center;
+}
+
+.optionButton.active > .dropdown > footer > span > input {
+ background: transparent;
+ font: 600 14px 'Mukta';
+ border-bottom: 3px solid #777;
+ color: #777;
+ margin: 0 5px;
+ width: 40px;
+ padding: 4px 6px;
+}
+
+.optionButton.active > .dropdown > footer > span > input:focus {
+  color: #007aff;
+  border-color: #007aff;
+}
+
+.optionButton.active > .dropdown > footer > span > svg {
+  margin-right: 5px;
+}
+
+.optionButton > .dropdown > .columns {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 20px;
+}
+
+.optionButton > .dropdown > .columns > .column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+  max-width: 240px;
+}
+
+.optionButton > .dropdown > .columns > .column:first-child {
+  padding-left: 0;
+}
+
+.optionButton > .dropdown > .columns > .column:last-child {
+  padding-right: 0;
+}
+
+.optionButton > .dropdown > .columns > .column:not(:last-child) {
+  border-right: 1px solid #d5d5d5;
+}
+
+.optionButton > .dropdown > .columns > .column > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 6px;
+  height: 40px;
+}
+
+.optionButton > .dropdown > .columns > .column > li > span {
+  text-align: left;
+  width: 120px;
+  padding-right: 16px;
+  line-height: 16px;
+}
+
+.optionButton > .dropdown > .columns > .column > li > span {
+  transition: transform 500ms ease;
+}
+
+.optionButton > .dropdown > .columns > .column > li > span:hover {
+  transform: translateY(-2px);
+}
+
+.optionButton > .dropdown > .columns > .column > li > span > small {
+  margin-left: 5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #fff;
+  background: rgb(209, 195, 2);
+  transition: background-color 500ms ease;
+}
+
+.optionButton > .dropdown > .columns > .column > li > span > small:not(.active):hover {
+  background: rgb(182, 170, 0); 
+}
+
+.optionButton > .dropdown > .columns > .column > li > span > small.active {
+  background: rgb(4, 161, 64);
+}
+
+.optionButton > .dropdown > .columns > .column > li > span > small.active:hover {
+  background: rgb(2, 131, 51);
+}
+
+.optionButton > .dropdown.fadedOptions > .columns > .column > li > span {
+  color: #777;
+}
+
+.optionButton > .dropdown.fadedOptions > .columns > .column > li > span:hover {
+  color: #222;
+}
+
+.optionButton > .dropdown.fadedOptions > .columns > .column > li > div > label {
+  opacity: .5;
+  transition: opacity 500ms ease, transform 500ms ease;
+  cursor: pointer; 
+}
+
+.optionButton > .dropdown.fadedOptions > .columns > .column > li > div > label:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.optionButton > .dropdown.fadedOptions > .columns > .column > li.active > span {
+  color: #007aff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+}
+
+.optionButton > .dropdown > .columns > .column > li > div {
+  width: 120px;
+  padding-right: 12px;
+  position: relative;
+}
+
+.optionButton > .dropdown > .columns > .column > li > div > label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.optionButton > .dropdown > .columns > .column > li > div > label > span {
+  text-align: left;
+  line-height: 14px;
+}
+
+.optionButton > .dropdown > .columns > .column > li > div > select {
+  width: 100%;
+}
+
+.optionButton > .dropdown > .columns > .column > li > div > select {
+  height: 30px;
+  padding: 0 5px;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,166 @@
+@media only screen and (max-width: 740px) {
+
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Home styles */
+
+  #container > header {
+    height: 55px;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  #container > header > div {
+    justify-content: center;
+    padding: 0;
+  }
+
+  #container > header > div > a > img {
+    width: 200px;
+    height: 45.24px;
+  }
+
+  #container > header > div > h1 {
+    display: none;
+  }
+
+  #container > section {
+    padding: 0;
+    margin-top: 55px;
+  }
+
+  #container > section > #options {
+    margin-top: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #007aff;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  #container > section > #options > div > .optionButton {
+    background: transparent;
+  }
+
+  #container > section > #options > div > .optionButton > div:not(.dropdown),
+  #container > section > #options > div > .optionButton > div > svg,
+  #container > section > #options > div > .optionButton > div > svg:hover {
+    transition: none;
+    color: #fff;
+    opacity: 1;
+    background: transparent;
+  }
+
+  #container > section > #tableContainer {
+    min-height: calc(100vh - 100px);
+  }
+
+  #container > section > #tableContainer > table {
+    margin-top: 0;
+    margin-bottom: 50px;
+    border-radius: 0;
+  }
+
+  #container > section > #tableContainer > table > thead > tr > th:first-child {
+    border-top-left-radius: 0;
+  }
+  
+  #container > section > #tableContainer > table > thead > tr > th:last-child {
+    border-top-right-radius: 0;
+  }
+  
+  #container > footer {
+    display: none;
+  }
+
+  /* OptionButton styles */
+
+  .optionButton > .dropdown {
+    position: absolute;
+    bottom: 60px;
+    left: 5px;
+    background: #e6e6e6;
+    border-radius: 3px;
+    top: auto;
+    width: calc(100vw - 25px);
+  }
+
+  .optionButton > .dropdown > span {
+    right: auto;
+    left: 0;
+  }
+
+  .optionButton > .dropdown > .columns {
+    width: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .optionButton > .dropdown > .columns > .column {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  .optionButton > .dropdown > .columns > .column > li > span {
+    flex: 1;
+  }
+
+  .optionButton > .dropdown > .columns > .column > li > div {
+    flex: 2;
+  }
+
+  .optionButton,
+  .optionButton > .dropdown > .columns > .column > li > div {
+    position: static;
+  }
+
+  /* CustomSelect styles */
+
+  .custom-select > .options > input {
+    width: 100%;
+    margin-top: 5px;
+    border-top: 1px solid #bbb;
+    border-bottom: none;
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .custom-select:hover > .options {
+    width: calc(100vw - 15px);
+    height: calc(70vh - 25px);
+    display: flex;
+    flex-direction: column-reverse;
+    position: fixed;
+    top: calc(-70vh + 60px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .custom-select:hover > .options::after {
+    width: calc(100vw - 15px);
+    height: 20px;
+    position: fixed;
+    top: calc(-70vh + 30px);
+    left: 0;
+    bottom: 0;
+    content: "Clique aqui para sair";
+    color: #fff;
+  }
+
+}
